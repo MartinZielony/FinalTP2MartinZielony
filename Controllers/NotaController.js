@@ -32,17 +32,18 @@ class NotaController {
             typeof nota !== "number" ||
             nota < 0 || nota > 10
         ) {
-            res.status(409).send({ success: false, message: "Alguno de los datos para la creación de la nota es inválido"})
+            res.status(409).send({ success: false, message: "Alguno de los datos para la creación de la nota es inválido" })
         } else {
-            datos.push({
+            let notaNueva = {
                 id: datos.length + 1,
                 nombreAlumno: nombreAlumno,
                 apellidoAlumno: apellidoAlumno,
                 nota: nota
-            });
-            res.status(200).send({ 
-                success: true, 
-                message: "Nota creada con éxito"
+            }
+            datos.push(notaNueva);
+            res.status(201).send({
+                success: true,
+                message: "Nota creada con éxito " + JSON.stringify(notaNueva)
             });
         }
     }
