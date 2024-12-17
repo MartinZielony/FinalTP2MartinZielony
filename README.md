@@ -14,3 +14,5 @@
 ### GET a /nota/alumnos devuelve todas las notas agrupadas por alumno
 
 ### POST a /nota crea una nueva nota en la lista
+
+NOTA: Se realizó el final corto por indicacion del profesor de cursada.
